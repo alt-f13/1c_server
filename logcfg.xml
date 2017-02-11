@@ -1,0 +1,27 @@
+<config xmlns="http://v8.1c.ru/v8/tech-log">
+    <log location="/var/log/1c" history="168">
+        <event>
+            <eq property="Name" value="PROC"/>
+        </event>
+        <event>
+            <eq property="Name" value="SCOM"/>
+        </event>
+        <event>
+            <eq property="Name" value="CONN"/>
+        </event>
+        <event>
+            <eq property="Name" value="EXCP"/>
+        </event>
+        <event>
+            <eq property="Name" value="ADMIN"/>
+        </event>
+        <event>
+            <eq property="Name" value="QERR"/>
+        </event>
+        <event>
+            <gt property="Duration" value="100000"/>
+        </event>
+        <property name="all">
+        </property>
+    </log>
+</config>
