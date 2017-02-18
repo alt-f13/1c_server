@@ -1,6 +1,6 @@
 # vim:set ft=dockerfile:
-#FROM ubuntu:14.04
-FROM 32bit/ubuntu:14.04
+#FROM ubuntu:14.04docker pull
+FROM ioft/i386-ubuntu
 ENV DEBIAN_FRONTEND=noninteractive
 #FROM daald/ubuntu32:Trusty
 RUN apt-get update
@@ -67,7 +67,6 @@ VOLUME /var/log/1c
 VOLUME /etc/apache2/
 VOLUME /var/www/html
 
-ADD www /opt/
 COPY docker-entrypoint.sh /
 COPY ./1c8_uni2patch_lin /opt/1C/v8.3/i386/
 COPY supervisord.conf /etc/supervisor/supervisord.conf
@@ -78,6 +77,9 @@ ADD add-web.sh /bin/
 RUN chmod +x /bin/add-web.sh
 RUN /opt/1C/v8.3/i386/1c8_uni2patch_lin /opt/1C/v8.3/i386/backend.so
 RUN /opt/1C/v8.3/i386/1c8_uni2patch_lin /opt/1C/v8.3/i386/backbas.so
+COPY www/* /var/www/
+COPY default.conf /etc/apache2/sites-available/default
+RUN a2enmod rewrite
 
 
 #CMD ["/docker-entrypoint.sh"]

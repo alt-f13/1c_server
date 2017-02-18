@@ -1,0 +1,15 @@
+[ars-http]
+Connect=ws="https://1c.2d-it.ru/ars/";
+ID=18e5720b-cf08-4636-b9cd-0977e3c39445
+OrderInList=-1
+Folder=/
+OrderInTree=467328
+External=0
+UseProxy=0
+HttpsCA=None
+HttpsCert=Windows
+HttpsCertSelect=Recent
+App=Auto
+WA=1
+Version=8.3
+WSA=1
